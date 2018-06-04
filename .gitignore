@@ -1,2 +1,2 @@
-/wekapy_data
-/__pycache__
+wekapy_data/*
+__pycache__/*
