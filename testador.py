@@ -1,10 +1,10 @@
-import cv2
 import sys
-import numpy as np
-from wekapy import *
+from wekapy import Model, Instance, Feature
+from extraction import extract_features
 
 
-def create_instance(features):
+def create_instance(file):
+    features = extract_features(file)
     instance = Instance()
     instance.add_features([
         Feature(name="feat1", value=features[0], possible_values="numeric"),
@@ -19,26 +19,17 @@ def create_instance(features):
     return instance
 
 
-def hsv_thresh(img):
-    frame = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-    l1 = np.array((5, 38, 30))
-    l2 = np.array((50, 250, 242))
-    skinMask = cv2.inRange(frame, l1, l2)
-    return skinMask
+def main():
+    model = Model(classifier_type = "trees.RandomForest", classpath = "/usr/share/java/weka/weka.jar")
+    model.load_model("random_forest.model")
 
-model = Model(classifier_type = "trees.RandomForest", classpath = "/usr/share/java/weka/weka.jar")
-model.load_model("random_forest.model")
+    model.add_test_instance(create_instance(sys.argv[1]))
+    model.test()
+    print(model.predictions)
 
-img = cv2.imread(sys.argv[1])
-img = hsv_thresh(img)
+    predictions = model.predictions
+    for prediction in predictions:
+        print(prediction)
 
-hu = cv2.HuMoments(cv2.moments(img)).flatten()
-hu = np.array(hu).tolist()
-
-model.add_test_instance(create_instance(hu))
-model.test()
-print(model.predictions)
-
-predictions = model.predictions
-for prediction in predictions:
-    print(prediction)
+if __name__ == "__main__":
+    main()

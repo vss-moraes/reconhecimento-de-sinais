@@ -1,0 +1,12 @@
+@relation 8338c073-fb83-45a4-80e4-c83ec1f37595
+	@attribute feat1 numeric
+	@attribute feat2 numeric
+	@attribute feat3 numeric
+	@attribute feat4 numeric
+	@attribute feat5 numeric
+	@attribute feat6 numeric
+	@attribute feat7 numeric
+	@attribute class {A, B, C, D, E}
+
+@data
+0.0008410842284538436,2.0516122932453234e-07,7.453454494030595e-11,6.0833559075133e-12,1.195189046045582e-22,2.7460223508508007e-15,4.9950483528372494e-23,?
