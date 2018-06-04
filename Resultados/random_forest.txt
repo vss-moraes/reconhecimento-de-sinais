@@ -1,0 +1,57 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1
+Relation:     sinais
+Instances:    354
+Attributes:   8
+              feat1
+              feat2
+              feat3
+              feat4
+              feat5
+              feat6
+              feat7
+              class
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 0 -M 1.0 -V 0.001 -S 1 -do-not-check-capabilities
+
+Time taken to build model: 0.23 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         307               86.7232 %
+Incorrectly Classified Instances        47               13.2768 %
+Kappa statistic                          0.8336
+Mean absolute error                      0.0871
+Root mean squared error                  0.1975
+Relative absolute error                 27.262  %
+Root relative squared error             49.4047 %
+Total Number of Instances              354     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.908    0.018    0.932      0.908    0.920      0.899    0.991     0.969     A
+                 0.947    0.036    0.878      0.947    0.911      0.887    0.993     0.971     B
+                 0.726    0.041    0.789      0.726    0.756      0.708    0.968     0.850     C
+                 0.973    0.021    0.923      0.973    0.947      0.934    0.998     0.994     D
+                 0.742    0.049    0.778      0.742    0.760      0.706    0.955     0.844     E
+Weighted Avg.    0.867    0.032    0.865      0.867    0.865      0.834    0.982     0.931     
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e   <-- classified as
+ 69  0  0  0  7 |  a = A
+  0 72  2  2  0 |  b = B
+  0  6 45  4  7 |  c = C
+  0  2  0 72  0 |  d = D
+  5  2 10  0 49 |  e = E
+

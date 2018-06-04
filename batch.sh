@@ -1,0 +1,10 @@
+python classificador.py a-b A B
+python classificador.py a-c A C
+python classificador.py a-d A D
+python classificador.py a-e A E
+python classificador.py b-c B C
+python classificador.py b-d B D
+python classificador.py b-e B E
+python classificador.py c-d C D
+python classificador.py c-e C E
+python classificador.py d-e D E

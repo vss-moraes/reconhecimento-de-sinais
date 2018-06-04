@@ -1,0 +1,35 @@
+Tester:     weka.experiment.PairedCorrectedTTester -G 4,5,6 -D 1 -R 2 -S 0.05 -result-matrix "weka.experiment.ResultMatrixPlainText -mean-prec 2 -stddev-prec 2 -col-name-width 0 -row-name-width 25 -mean-width 3 -stddev-width 2 -sig-width 1 -count-width 5 -print-col-names -print-row-names -enum-col-names"
+Analysing:  Percent_correct
+Datasets:   11
+Resultsets: 7
+Confidence: 0.05 (two tailed)
+Sorted by:  -
+Date:       6/2/18 2:26 PM
+
+
+Dataset                   (1) functions | (2) functi (3) functi (4) functi (5) lazy.I (6) rules (7) trees.
+----------------------------------------------------------------------------------------------------------
+a-b                      (100)   100.00 |    99.93     100.00     100.00     100.00     99.15     100.00  
+a-c                      (100)    96.68 |    97.90      98.27      97.81      98.55     94.05      97.26  
+a-d                      (100)   100.00 |   100.00     100.00     100.00     100.00     99.20     100.00  
+a-e                      (100)    85.55 |    87.46      85.96      78.15      91.75     83.72      90.05  
+b-c                      (100)    95.31 |    94.00      90.30      85.19 *    93.32     89.70 *    93.35  
+b-d                      (100)    99.60 |    99.33      94.73 *    91.13 *    99.00     94.40 *    95.33 *
+b-e                      (100)    98.88 |    98.02      95.36 *    94.52 *    96.85     94.37 *    98.03  
+c-d                      (100)    99.26 |    99.71      97.85      95.58 *    98.84     97.68      97.66  
+c-e                      (100)    84.73 |    86.25      86.45      84.43      81.33     82.01      84.88  
+d-e                      (100)    99.86 |   100.00      99.29      99.07     100.00     98.50      99.71  
+sinais                   (100)    85.93 |    85.45      68.70 *    70.68 *    85.19     77.60 *    85.93  
+----------------------------------------------------------------------------------------------------------
+                                (v/ /*) |   (0/11/0)    (0/8/3)    (0/6/5)   (0/11/0)   (0/7/4)   (0/10/1)
+
+
+Key:
+(1) functions.Logistic '-R 1.0E-8 -M -1 -num-decimal-places 4' 3932117032546553727
+(2) functions.MultilayerPerceptron '-L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a' -5990607817048210779
+(3) functions.RBFClassifier '-N 2 -R 0.01 -L 1.0E-6 -C 2 -P 1 -E 1 -S 1' -7847475556438394611
+(4) functions.SMO '-C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K \"functions.supportVector.PolyKernel -E 1.0 -C 250007\" -calibrator \"functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4\"' -6585883636378691736
+(5) lazy.IBk '-K 1 -W 0 -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.EuclideanDistance -R first-last\\\"\"' -3080186098777067172
+(6) rules.JRip '-F 3 -N 2.0 -O 2 -S 1' -6589312996832147161
+(7) trees.RandomForest '-P 100 -I 100 -num-slots 1 -K 0 -M 1.0 -V 0.001 -S 1' 1116839470751428698
+
